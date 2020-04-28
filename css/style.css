@@ -26,9 +26,10 @@ header {
 }
 
 .header-right {
-    float:right;
+    float: right;
     background-color: gray;
     transition: all 0.5s;
+    display: none;
 }
 
 .header-right a {
@@ -48,7 +49,7 @@ header {
 }
 
 .top-wrapper {
-    background-image: url(https://yuki-nissie-hoshi.com/wp-content/uploads/2020/03/2019-04-15.png);
+    background-image: url(../images/190e.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -78,11 +79,13 @@ header {
 }
 
 .model {
-    width: 100%;
+    width: 49%;
     background-color: rgb(255, 223, 163);
     text-align: center;
     padding: 20px 10px;
-    border: solid 1px white;
+    /* border: solid 1px white; */
+    margin:5px;
+    box-shadow: 0px 0px 10px #000;
 }
 
 .model img {
@@ -99,7 +102,7 @@ header {
 @media (max-width: 1200px) { 
     .model {
         width: 48%;
-        background-color: rgb(44, 14, 58);
+        /* background-color: rgb(44, 14, 58); */
         text-align: center;
         padding: 20px 10px;
         float: left;
@@ -111,7 +114,7 @@ header {
 @media (max-width: 992px) {
     .model {
         width: 48%;
-        background-color: red;
+        /* background-color: red; */
         text-align: center;
         padding: 20px 10px;
         float: left;
@@ -123,7 +126,7 @@ header {
 @media (max-width: 768px) {
     .model {
         width: 100%;
-        background-color: #aaa;
+        /* background-color: #aaa; */
         text-align: center;
         padding: 20px 10px;
         float: left;
@@ -135,7 +138,7 @@ header {
 @media (max-width: 576px) {
     .model {
         width: 100%;
-        background-color: #aaa;
+        /* background-color: #aaa; */
         text-align: center;
         padding: 20px 10px;
         float: none;
