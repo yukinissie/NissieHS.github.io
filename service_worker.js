@@ -13,7 +13,6 @@ registerRoute(
   }),
 );
 
-
 // Cache the Google Fonts webfont files with a cache first strategy for 1 year.
 registerRoute(
   /^https:\/\/fonts\.gstatic\.com/,
@@ -32,6 +31,20 @@ registerRoute(
 
 // Cache JavaScript and CSS
 registerRoute(/\.(?:js|css)$/, new StaleWhileRevalidate());
+
+// Cache Images
+registerRoute(
+  /\.(?:png|gif|jpg|jpeg|svg)$/,
+  new CacheFirst({
+    cacheName: 'images',
+    plugins: [
+      new ExpirationPlugin({
+        maxEntries: 60,
+        maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+      }),
+    ],
+  }),
+);
 
 // キャッシュファイルの指定
 var CACHE_NAME = 'pwa-caches';
