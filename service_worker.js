@@ -3,7 +3,10 @@ import {CacheFirst, StaleWhileRevalidate} from 'workbox-strategies';
 import {CacheableResponsePlugin} from 'workbox-cacheable-response';
 import {ExpirationPlugin} from 'workbox-expiration';
 import {StaleWhileRevalidate} from 'workbox-strategies';
+import * as googleAnalytics from 'workbox-google-analytics';
 
+// Offline Google Analytics
+googleAnalytics.initialize();
 
 // Cache the Google Fonts stylesheets with a stale while revalidate strategy.
 registerRoute(
