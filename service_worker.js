@@ -2,6 +2,8 @@ import {registerRoute} from 'workbox-routing';
 import {CacheFirst, StaleWhileRevalidate} from 'workbox-strategies';
 import {CacheableResponsePlugin} from 'workbox-cacheable-response';
 import {ExpirationPlugin} from 'workbox-expiration';
+import {StaleWhileRevalidate} from 'workbox-strategies';
+
 
 // Cache the Google Fonts stylesheets with a stale while revalidate strategy.
 registerRoute(
@@ -27,6 +29,9 @@ registerRoute(
     ],
   }),
 );
+
+// Cache JavaScript and CSS
+registerRoute(/\.(?:js|css)$/, new StaleWhileRevalidate());
 
 // キャッシュファイルの指定
 var CACHE_NAME = 'pwa-caches';
